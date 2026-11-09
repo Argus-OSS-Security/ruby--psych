@@ -1,15 +1,16 @@
 name: libfyaml
 
-on:
-  push:
-  pull_request:
-  schedule:
-    - cron: '33 11 * * 0'
-  workflow_dispatch:
-
-# Exercises the experimental, opt-in libfyaml backend (--enable-libfyaml).
-# libfyaml is not supported on Windows, so this workflow runs on Linux and
-# macOS only. The default libyaml backend is covered by test.yml/libyaml.yml.
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#   pull_request:
+#   schedule:
+#     - cron: '33 11 * * 0'
+#   workflow_dispatch:
+# 
+# # Exercises the experimental, opt-in libfyaml backend (--enable-libfyaml).
+# # libfyaml is not supported on Windows, so this workflow runs on Linux and
+# # macOS only. The default libyaml backend is covered by test.yml/libyaml.yml.
 jobs:
   ruby-versions:
     uses: ruby/actions/.github/workflows/ruby_versions.yml@master
